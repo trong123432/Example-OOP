@@ -106,8 +106,8 @@ public:
         }
     }
     T min() {
-        T minVal = T();
-        for (int i = 0; i < size; i++)
+        T minVal = data[0];
+        for (int i = 1; i < size; i++)
             if (data[i]<minVal)
                 minVal = data[i];
         return minVal;
@@ -146,9 +146,19 @@ public:
 
 int main() {
     Array<int> a;
+    cin >> a;
+    cout << "mang a :" << endl;
+    cout << "mang ban dau: " << a << endl;
     a.sort();
-    cout << a << endl;
-    cout << a.min() << endl;
-    cout << a.sum();
+    cout << "sau khi sort: " << a << endl;
+    cout << "minimum: " << a.min() << endl;
+    cout << "total: " << a.sum() << endl;
+    Array<int> b(5, 10);
+    cout << "mang b:" << endl;
+    cout << "mang ban dau: " << b << endl;
+    b.add(213, 3);
+    cout << "mang sau khi add: " << b << endl;
+    b.remove(2);
+    cout << "mang sau khi remove: " << b << endl;
     return 0;
 }
